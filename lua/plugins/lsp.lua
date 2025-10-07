@@ -1,7 +1,6 @@
 return {
 	'neovim/nvim-lspconfig',
 	config = function()
-		local lspconfig = require('lspconfig'),
 		vim.api.nvim_create_autocmd('LspAttach', {
 			group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
 			callback = function(event)
@@ -83,9 +82,6 @@ return {
 			'gopls'
 		}
 
-		for _, server in ipairs(servers) do
-			local config = require("lsp." .. server)
-			lspconfig[server].setup(config)
-		end
+		vim.lsp.enable(servers)
 	end
 }
