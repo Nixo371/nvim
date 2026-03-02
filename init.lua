@@ -1,7 +1,7 @@
 require("config.lazy")
 require("config.remap")
 
-vim.cmd 'colorscheme void'
+vim.cmd.colorscheme("vantablack")
 
 vim.opt.number = true
 vim.opt.relativenumber = true
